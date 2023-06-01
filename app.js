@@ -14,26 +14,19 @@ function eventListener() {
 }
 
 function notfollowing(following, followers) {
-  const followingArray = [];
-  const followersArray = [];
+  console.log(following);
+  console.log(followers);
   const notfollowingArray = [];
-  for (let i = 0; i < following.length; i++) {
-    console.log(following[i].login);
-    followingArray.push(following[i].login);
-  }
+  
   for (let i = 0; i < followers.length; i++) {
-    console.log(followers[i].login);
-    followersArray.push(followers[i].login);
-  }
-  for (let i = 0; i < followersArray.length; i++) {
     let a = 0;
-    for (let j = 0; j < followingArray.length; j++) {
-      if (followersArray[i] === followingArray[j]) {
+    for (let j = 0; j < following.length; j++) {
+      if (followers[i] === following[j]) {
         a = 1;
       }
     }
     if (a === 0) {
-      notfollowingArray.push(followersArray[i]);
+      notfollowingArray.push(followers[i]);
     }
   }
   return notfollowingArray;
@@ -53,8 +46,7 @@ function getData(e) {
           ui.addSearchedUserToUI(username);
           Storage.addSearchedUsersToStorage(username);
           ui.showUserInfo(response.user);
-          
-          ui.showNotFollowing(notfollowing(response.followers, response.following));
+          ui.showNotFollowing(notfollowing(github.followersArray, github.followingArray));
           ui.showRepoInfo(response.repo);
         }
       })
