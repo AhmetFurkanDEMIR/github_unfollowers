@@ -7,8 +7,8 @@ class Github{
     async getGithubData(username){
         const responseUser = await fetch(this.url + username);
         const responseRepo = await fetch(this.url + username + '/repos');
-        const responseFollowers = await fetch(this.url + username + "/followers");
-        const responseFollowing = await fetch(this.url + username + "/following");
+        const responseFollowers = await fetch(this.url + username + "/followers?per_page=100");
+        const responseFollowing = await fetch(this.url + username + "/following?per_page=100");
 
         const userData = await responseUser.json();
         const repoData = await responseRepo.json();
