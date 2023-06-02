@@ -77,12 +77,12 @@ class UI {
     }
 
     showNotFollowing(users){
-        this.notFollowingDiv.innerHTML ="";
+        this.notFollowingDiv.innerHTML ="<h3 class='page-heading'>Geri Takip Etmeyenler</h3>";
         users.forEach(user =>{
             this.notFollowingDiv.innerHTML +=`
-            <div>
+            <div style = 'display:inline-flex;'>
             <a href = ${this.githubURL+user}>
-            <h1><span href = "" class="badge badge-pill badge-success">${user}</span></h1>
+            <h1><span href = "" class="badge badge-pill badge-secondary">${user}</span></h1>
             </a>
             </div>
             `
@@ -90,15 +90,15 @@ class UI {
     }
 
     showRepoInfo(repos){
-        this.repoDiv.innerHTML = "";
+        this.repoDiv.innerHTML = "<h3 class='page-heading mb-3'>En son repolar</h3>";
         repos.forEach(repo => {
             this.repoDiv.innerHTML += `
             <div class="mb-2 card-body">
                     <div class="row">
-                        <div class="col-md-2">
-                        <a href="${repo.html_url}" target = "_blank" id = "repoName">${repo.name}</a>
+                        <div class="col-md-9">
+                        <h5><a href="${repo.html_url}" target = "_blank" id = "repoName">${repo.name}</a></h5>
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-md-3">
                             <button class="btn btn-secondary">
                                 Starlar  <span class="badge badge-light" id="repoStar">${repo.stargazers_count}</span>
                             </button>
