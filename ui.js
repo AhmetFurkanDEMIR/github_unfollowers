@@ -72,7 +72,7 @@ class UI {
         
         setTimeout(() => {
             div.remove();
-        }, 3000);
+        }, 5000);
 
     }
 
