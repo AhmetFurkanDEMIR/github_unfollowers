@@ -1,105 +1,131 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="tr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9215921623608743"
+        crossorigin="anonymous"></script>
     <title>Github API</title>
 
     <style>
-    body{
-        background-image: url("./images/blackbgraund.jpg");
-        color: black ;
-        background-repeat: no-repeat;
-        height: 100%;
-        background-size: cover;
-        
-        
-    }
-    .borderzero {
-        border: 0 none;
-    }
-    .search {
-        background-color: #a8b4b7 !important;
-    }
-    .list-group-item{
-        background-color: #a8b4b7 !important;
-    }
-    .card-body{
-        background-color: #a8b4b7 !important;
-    }
-    .page-heading{
-        color:white;
-    }
-    a {
-     text-decoration: none;
-     color:black;
-    }
-    a:visited {
-        color:black;
-        text-decoration: none;
-    }
-    a:hover {
-    color: black;
-    text-decoration: none;
-    }
-    a:active {
-        color: black ;
-    text-decoration: none;
-}
-    
+        body,
+        html {
+            height: 100%;
+        }
+
+        body {
+            background: url("./images/blackbgraund.jpg") no-repeat center center fixed;
+            color: black;
+            background-color: black;
+            background-repeat: no-repeat;
+            height: 100%;
+            background-size: cover;
+            height: 100%;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+
+
+        }
+
+        .borderzero {
+            border: 0 none;
+        }
+
+        .search {
+            background-color: #a8b4b7 !important;
+        }
+
+        .list-group-item {
+            background-color: #a8b4b7 !important;
+        }
+
+        .card-body {
+            background-color: #a8b4b7 !important;
+        }
+
+        .page-heading {
+            color: white;
+        }
+
+        a {
+            text-decoration: none;
+            color: black;
+        }
+
+        a:visited {
+            color: black;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: black;
+            text-decoration: none;
+        }
+
+        a:active {
+            color: black;
+            text-decoration: none;
+        }
     </style>
 </head>
+
 <body>
-   <br>
+    <br>
     <div class="container searchContainer">
         <div class="search card card-body">
             <h3>Github Kullanıcılarını Arayın</h3>
             <p class="lead">
                 Bir kullanıcı adı girin ve kullanıcının bilgilerine ulaşın!
             </p>
-            <form id = "github-form">
-                <input style = "background-color:#cfd2d3;border:0px" type="text" name="githubname" id="githubname" class = "form-control" placeholder="Github Kullanıcı adı">
+            <form id="github-form">
+                <input style="background-color:#cfd2d3;border:0px" type="text" name="githubname" id="githubname"
+                    class="form-control" placeholder="Github Kullanıcı adı">
                 <br>
-                <button type = "submit" class ="btn btn-dark">Ara</button>
+                <button type="submit" class="btn btn-dark">Ara</button>
             </form>
             <br><br>
 
 
         </div>
         <br>
-        
+
         <div id="profile">
-            </div>
-            
-            <div id = "notfollowing">
-
-            </div>
-            <hr>
-            <div id="repos">
-                 
-              
-            </div>
-
-            <h3 class="page-heading mb-3">Son Aramalar</h3>
-            
-            <div  id="lastSearch" style ="margin-bottom: 100px;">
-                <ul class ="list-group" id = "last-users">
-                   
-                </ul>
-                <hr>
-                <button id ="clear-last-users" class="btn btn-dark">Son Arananları Temizle</button>
-                
-            </div>
-                
-            </div> 
-                 
-            
         </div>
-        
 
-       
+        <div id="notfollowing">
+
+        </div>
+        <hr>
+        <div id="repos">
+
+
+        </div>
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9215921623608743"
+            data-ad-slot="3914607271" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        <h3 class="page-heading mb-3">Son Aramalar</h3>
+
+        <div id="lastSearch" style="margin-bottom: 100px;">
+            <ul class="list-group" id="last-users">
+
+            </ul>
+            <hr>
+            <button id="clear-last-users" class="btn btn-dark">Son Arananları Temizle</button>
+
+        </div>
+
+    </div>
+
+
+    </div>
+
+
+
     </div>
 
 
@@ -109,9 +135,18 @@
 
     <script src="app.js"></script>
 
-
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
 </body>
+
 </html>
