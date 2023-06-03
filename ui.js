@@ -81,7 +81,7 @@ class UI {
         users.forEach(user =>{
             this.notFollowingDiv.innerHTML +=`
             <div style = 'display:inline-flex;'>
-            <a href = ${this.githubURL+user}>
+            <a href = ${this.githubURL+user} target=”_blank” >
             <h1><span href = "" class="badge badge-pill badge-secondary">${user}</span></h1>
             </a>
             </div>
