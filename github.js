@@ -16,9 +16,9 @@ class Github {
     const userData = await responseUser.json();
     const repoData = await responseRepo.json();
 
-    if (userData.followers > 5000 || userData.followings > 5000) {
+    if (userData.followers > 3000 || userData.followings > 3000) {
       this.ui.showError(
-        "Takipçi sayın veya takip sayın 5000'den fazla ise Geri takip etmeyenleri göremezsin !!"
+        "Takipçi sayın veya takip sayın 3000'den fazla ise Geri takip etmeyenleri göremezsin !!"
       );
     } else {
       let page = 1;
